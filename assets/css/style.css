@@ -1,0 +1,26 @@
+/* Box header */
+.header{
+
+}
+.header .inner_wrap{
+    background-color: rgb(210, 208, 208);
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 45px;
+}
+.header .inner_logo img{
+    width: auto;
+    height: 30px;
+}
+.header .inner_menu ul{/*vì  tag ul có sẵn padding và margin nên css nó về 0 trước*/
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+}
+/* Box header */
