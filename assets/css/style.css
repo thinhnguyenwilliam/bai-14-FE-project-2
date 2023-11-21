@@ -1,10 +1,16 @@
 /* Box header */
-.header{
+.header{/*luôn luôn cố định 1 chỗ*/
+    position: fixed;/*khi để fixed thì width:auto(co nhỏ lại) nên cần phải chỉnh width */
+    width: 100%;/*canh ra được full width theo viewport*/
+    top: 30px;/*This property sets the distance from the top of the viewport to the top edge of the header.*/
 
+    z-index: 999;
+
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 }
 .header .inner_wrap{
     background-color: rgb(210, 208, 208);
-    padding: 15px 30px;
+    padding: 25px 40px;
 
     display: flex;
     align-items: center;
@@ -23,4 +29,124 @@
 
     display: flex;
 }
+.header .inner_menu ul li{
+    margin-left: 30px;
+}
+.header .inner_menu ul li a{
+    color: var(--color-text-1);
+    font-weight: 500;
+    font-size: 14px;
+}
+.header .inner_menu ul li a:hover{
+    color: var(--color-highlight)
+}
 /* Box header */
+
+
+
+
+
+/* Section 1 */
+.section_1{
+    background-image: url(../img/banner-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;/*cover: ensures that the background image covers the entire container while maintaining its aspect ratio.*/
+    background-position: center center;/*meaning the image will be centered both horizontally and vertically*/
+    height: 100vh; /* Chiều cao của container sẽ bằng chiều cao của cửa sổ trình duyệt(viewport height): cái ảnh nền full */
+
+    display: flex;/*2 dòng này căn giữa content section 1(lạ hé)*/
+    align-items: center;
+}
+.section_1 .inner_main{
+    max-width: 600px;
+    margin: 0 auto;/*canh giữa so với box cha là box container*/
+    text-align: center;
+}
+.section_1 .inner_main .inner_title{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.section_1 .inner_main .inner_desc{
+    color: #fff;
+    margin-bottom: 30px;
+}
+/* End Section 1 */
+
+
+
+/* Section 2 */
+.section_2{
+    margin-top: -200px;/*thò lên trên*/
+}
+.section_2 .inner_box{
+    background-color:  #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 15px; 
+}
+.section_2 .inner_box .inner_icon{
+    background-color: var(--color-main);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+
+    margin: 0 auto 30px auto;
+
+    display: inline-flex;/*img canh giữa inner_icon*/
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    transition: all 0.4s;
+}
+.section_2 .inner_box:hover .inner_icon{
+    background-color: var(--color-highlight);
+}
+.section_2 .inner_box .inner_icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;/*lun lun vừa khung*/
+}
+.section_2 .inner_box .inner_title{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text-1);
+    margin-bottom: 15px;
+}
+.section_2 .inner_box .inner_desc{
+    font-size: 13px;
+    color: var(--color-text-2);
+}
+/* End Section 2 */
+
+
+
+
+/* Section 3 */
+.section_3{
+    padding: 80px 0;
+}
+.section_3 .inner_image{
+    padding: 0 15%;/*tự co giãn content để padding, box cha sẽ kg thay đổi mà content thay đổi*/
+}
+.section_3 .inner_image img{
+    max-width: 100%;
+    height: auto;
+}
+.section_3 .inner_image_right{
+    text-align: right;
+}
+.section_3 .inner_content .inner_title{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-text-1);
+    margin-bottom: 30px;
+}
+.section_3.inner_content .inner_desc{
+    color: var(--color-text-2);
+}
+/* End Section 3 */

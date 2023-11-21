@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-
+/* *{
+    box-sizing: border-box;
+} */
 
 
 /*create variable global: colours*/
@@ -17,3 +19,40 @@
 /*End create variable global: colours*/
 
 
+
+/*init body font dùng variable global --font*/
+body{
+    font-family: var(--font);
+}
+
+
+
+/*mặc định boostrap tag a khi hover có dấu gạch chân nên cần bỏ*/
+a:hover{
+    text-decoration: none;
+}
+
+
+/* box button */
+.button{
+    background-color: #545252;
+    color: #fff;
+    display: inline-block;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 45px;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all 0.4s;
+}
+.button:hover{
+    color: #fff;
+}
+.button_highlight{
+    background-color: var(--color-highlight);
+}
+.button_highlight:hover{
+    background-color: var(--color-main);
+}
+/* box button */
