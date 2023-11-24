@@ -150,3 +150,155 @@
     color: var(--color-text-2);
 }
 /* End Section 3 */
+
+
+
+
+
+/* Section 4 */
+.section_4{
+    background-image: url(../img/work-process-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 100px 0;/*tự co giãn content(chỉ có width), còn height giữ nguyên + thêm 100px*/
+}
+.section_4 .inner_box{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+
+    position: relative;/*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
+}
+.section_4 .inner_box::before{/*dổ bóng to to sau*/
+    content: "";
+    display: block;
+    width: 100%;/*so sánh box cha(.inner_box)*/
+    height: 100%;/*so sánh box cha(.inner_box)*/
+    background-color: #ffffff42;/*chỉnh thành #fff trước, sau đó  kéo thanh 2(opcacity) xuống*/
+    border-radius: 15px;
+
+    position: absolute;/*so sánh box cha(.inner_box)*/
+    top: 10px;
+    left: 10px;
+}
+.section_4 .inner_box img{
+    height: 32px;
+    width: auto;
+    margin-bottom: 20px;
+
+    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+}
+.section_4 .inner_box .inner_title{
+    font-size: 18px;
+    color: var(--color-text-1);
+
+    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+}
+.section_4 .inner_box .inner_desc{
+    font-size: 14px;
+    color: var(--color-text-2);
+    margin-top: 5px;
+
+    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+}
+/* End Section 4 */
+
+
+
+/* Section 5 */
+.section_5{
+    padding: 80px 0;
+}
+.section_5 .inner_box{
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+    padding: 30px;
+    border-radius: 15px;
+}
+.section_5 .inner_box .inner_icon{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section_5 .inner_box .inner_icon img{
+    height: 32px;
+    width: auto;
+}
+.section_5 .inner_box .inner_desc{
+    color: var(--color-text-2);
+    margin-bottom: 30px;
+}
+.section_5 .inner_box .inner_infor{
+    display: flex;
+    align-items: center;
+}
+.section_5 .inner_box .inner_infor .inner_avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    overflow: hidden;/*ảnh trong khung dù tràn bị che đi->che thành hình tròn, kg che thì vuông do tràn*/
+    
+    margin-right: 15px;
+}
+.section_5 .inner_box .inner_infor .inner_avatar img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;/*ảnh vừa box .inner_avatar*/
+}
+.section_5 .inner_box .inner_infor .inner_text{
+    flex: 1;/*chiếm phần còn lại vì trong inner_infor có 2 thành phần: text và avatar*/
+}
+.section_5 .inner_box .inner_infor .inner_text .inner_name{
+    font-size: 18px;
+    color: var(--color-text-1);
+}
+.section_5 .inner_box .inner_infor .inner_text .inner_position{
+    font-size: 14px;
+    color: var(--color-highlight);
+}
+
+/* End Section 5 */
+
+
+
+/* Section 7 */
+.section_7{
+    background-image: url(../img/fun-facts-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    padding: 120px 0;
+}
+.section_7 .inner_box .inner_content{
+    color: #fff;
+    text-align: center;
+
+    position: relative;/*chèn icon phía sau, có phần tử giả before after gì gì đó*/
+}
+.section_7 .inner_box .inner_content::after{/*có icon phía sau*/
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    background-image: url(../img/circle-dec.png);
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: calc(50% - 20px/2);
+    left: calc(100% - 60px/2);
+}
+.section_7 .col-xl-3:last-child .inner_box .inner_content::after{/*có box có icon cuối */
+    display: none;
+}
+.section_7 .inner_box .inner_content .inner_number{
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.section_7 .inner_box .inner_content .inner_label{
+    font-weight: 500;
+}
+/* End Section 7 */

@@ -15,6 +15,8 @@
     --color-text-2:#777;
     
     --font: 'Raleway', sans-serif;
+
+    --bg-1:#F2F2FE;
 }
 /*End create variable global: colours*/
 
@@ -55,4 +57,29 @@ a:hover{
 .button_highlight:hover{
     background-color: var(--color-main);
 }
-/* box button */
+/* end box button */
+
+
+
+/* box head */
+.box_head{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.box_head .inner_title{
+    color: var(--color-text-1);
+    font-size: 28px;
+    font-weight: 500;
+}
+.box_head .inner_desc{
+    color: var(--color-text-2);
+    margin-top: 10px;
+}
+/*box white*/
+.box_head.inner_white .inner_title{
+    color: #fff
+}
+.box_head.inner_white .inner_desc{
+    color: #fff
+}
+/* end box head */
