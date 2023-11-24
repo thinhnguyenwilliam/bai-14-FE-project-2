@@ -57,6 +57,12 @@ a:hover{
 .button_highlight:hover{
     background-color: var(--color-main);
 }
+.button_main{
+    background-color: var(--color-main);
+}
+.button_main:hover{
+    background-color: var(--color-highlight);
+}
 /* end box button */
 
 
