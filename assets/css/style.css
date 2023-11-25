@@ -40,6 +40,18 @@
 .header .inner_menu ul li a:hover{
     color: var(--color-highlight)
 }
+.header .inner_icon_menu{
+    display: none;
+}
+@media (max-width:991.98px){
+    .header .inner_menu{
+        display: none;
+    }
+    .header .inner_icon_menu{
+        display: inline-block;
+        font-size: 24px;
+    }
+}
 /* Box header */
 
 
@@ -72,6 +84,11 @@
     color: #fff;
     margin-bottom: 30px;
 }
+@media (max-width:767.98px){
+    .section_1 .inner_main .inner_title{
+        font-size: 24px;
+    }
+}
 /* End Section 1 */
 
 
@@ -86,6 +103,7 @@
     text-align: center;
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
     border-radius: 15px; 
+    margin-bottom: 30px;
 }
 .section_2 .inner_box .inner_icon{
     background-color: var(--color-main);
@@ -121,6 +139,11 @@
     font-size: 13px;
     color: var(--color-text-2);
 }
+@media (max-width:991.98px){
+    .section_2{
+        margin-top: 0;
+    }
+}
 /* End Section 2 */
 
 
@@ -137,7 +160,7 @@
     max-width: 100%;
     height: auto;
 }
-.section_3 .inner_image_right{
+.section_3 .inner_image.inner_image_right{
     text-align: right;
 }
 .section_3 .inner_content .inner_title{
@@ -148,6 +171,20 @@
 }
 .section_3.inner_content .inner_desc{
     color: var(--color-text-2);
+}
+@media (max-width:991.98px){
+    .section_3 .inner_image{
+        margin: 15px 0;
+        padding: 0;
+        text-align: center;
+    }
+    .section_3 .inner_image.inner_image_right{
+        text-align: center;
+    }
+    .section_3 .inner_content{
+        margin: 15px 0;
+        text-align: center;
+    }
 }
 /* End Section 3 */
 
@@ -170,6 +207,8 @@
     text-align: center;
 
     position: relative;/*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
+
+    margin-bottom: 30px;
 }
 .section_4 .inner_box::before{/*dổ bóng to to sau*/
     content: "";
@@ -215,6 +254,7 @@
     box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
     padding: 30px;
     border-radius: 15px;
+    margin-bottom: 30px;
 }
 .section_5 .inner_box .inner_icon{
     text-align: center;
@@ -258,8 +298,48 @@
     font-size: 14px;
     color: var(--color-highlight);
 }
-
 /* End Section 5 */
+
+
+/* Section 6 */
+.section_6{
+    background-color: var(--bg-1);
+    padding: 80px 0;
+}
+.section_6 .inner_box{
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.section_6 .inner_box .inner_title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.section_6 .inner_box .inner_price{
+    background-color: var(--color-main);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: #fff;
+    
+}
+.section_6 .inner_box.inner_highlight .inner_price{
+    background-color: var(--color-highlight);
+}
+.section_6 .inner_box .inner_price div:nth-child(1){/*trong inner_price có 2 tag div chọn tag div đâu tiên*/
+    font-size: 28px;
+    font-weight: 500;
+}
+.section_6 .inner_box .inner_list{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+/* End Section 6 */
 
 
 
@@ -271,6 +351,9 @@
     background-position: center;
 
     padding: 120px 0;
+}
+.section_7 .inner_box {
+    margin: 20px 0;
 }
 .section_7 .inner_box .inner_content{
     color: #fff;
@@ -301,6 +384,11 @@
 .section_7 .inner_box .inner_content .inner_label{
     font-weight: 500;
 }
+@media (max-width:991.98px){
+    .section_7 .inner_box .inner_content::after{
+        display: none;
+    }
+}
 /* End Section 7 */
 
 
@@ -328,5 +416,10 @@
     border-radius: 25px;
     min-height: 50px;/*hình như này kg ăn css do bên html để rows="5"*/
     border-color: #878686;
+}
+@media (max-width:991.98px){
+    .section_9 .inner_content{
+        margin-bottom: 30px;
+    }
 }
 /* End Section 9 */
