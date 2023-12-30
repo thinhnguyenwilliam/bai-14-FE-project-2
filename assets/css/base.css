@@ -5,19 +5,10 @@
     box-sizing: border-box;
 } */
 /*create variable global: colours*/
-:root {
-  --color-main:#8261ee;
-  --color-highlight:#ff589e;
-  --color-text-1:#1e1e1e;
-  --color-text-2:#777;
-  --font: "Raleway", sans-serif;
-  --bg-1:#F2F2FE;
-}
-
 /*End create variable global: colours*/
 /*init body font dùng variable global --font*/
 body {
-  font-family: var(--font);
+  font-family: "Raleway", sans-serif;
 }
 
 /*mặc định boostrap tag a khi hover có dấu gạch chân nên cần bỏ*/
@@ -43,19 +34,19 @@ a:hover {
 }
 
 .button_highlight {
-  background-color: var(--color-highlight);
+  background-color: #ff589e;
 }
 
 .button_highlight:hover {
-  background-color: var(--color-main);
+  background-color: #8261ee;
 }
 
 .button_main {
-  background-color: var(--color-main);
+  background-color: #8261ee;
 }
 
 .button_main:hover {
-  background-color: var(--color-highlight);
+  background-color: #ff589e;
 }
 
 /* end box button */
@@ -66,13 +57,13 @@ a:hover {
 }
 
 .box_head .inner_title {
-  color: var(--color-text-1);
+  color: #1e1e1e;
   font-size: 28px;
   font-weight: 500;
 }
 
 .box_head .inner_desc {
-  color: var(--color-text-2);
+  color: #777;
   margin-top: 10px;
 }
 
