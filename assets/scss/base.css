@@ -1,0 +1,91 @@
+/* import embedded is always first : font text*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* *{
+    box-sizing: border-box;
+} */
+
+
+/*create variable global: colours*/
+:root{
+    --color-main:#8261ee;
+    --color-highlight:#ff589e;
+    --color-text-1:#1e1e1e;
+    --color-text-2:#777;
+    
+    --font: 'Raleway', sans-serif;
+
+    --bg-1:#F2F2FE;
+}
+/*End create variable global: colours*/
+
+
+
+/*init body font dùng variable global --font*/
+body{
+    font-family: var(--font);
+}
+
+
+
+/*mặc định boostrap tag a khi hover có dấu gạch chân nên cần bỏ*/
+a:hover{
+    text-decoration: none;
+}
+
+
+/* box button */
+.button{
+    background-color: #545252;
+    color: #fff;
+    display: inline-block;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 45px;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: all 0.4s;
+}
+.button:hover{
+    color: #fff;
+}
+.button_highlight{
+    background-color: var(--color-highlight);
+}
+.button_highlight:hover{
+    background-color: var(--color-main);
+}
+.button_main{
+    background-color: var(--color-main);
+}
+.button_main:hover{
+    background-color: var(--color-highlight);
+}
+/* end box button */
+
+
+
+/* box head */
+.box_head{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.box_head .inner_title{
+    color: var(--color-text-1);
+    font-size: 28px;
+    font-weight: 500;
+}
+.box_head .inner_desc{
+    color: var(--color-text-2);
+    margin-top: 10px;
+}
+/*box white*/
+.box_head.inner_white .inner_title{
+    color: #fff
+}
+.box_head.inner_white .inner_desc{
+    color: #fff
+}
+/* end box head */

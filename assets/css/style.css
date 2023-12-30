@@ -1,425 +1,436 @@
+@charset "UTF-8";
 /* Box header */
-.header{/*luôn luôn cố định 1 chỗ*/
-    position: fixed;/*khi để fixed thì width:auto(co nhỏ lại) nên cần phải chỉnh width */
-    width: 100%;/*canh ra được full width theo viewport*/
-    top: 30px;/*This property sets the distance from the top of the viewport to the top edge of the header.*/
+.header { /*luôn luôn cố định 1 chỗ*/
+  position: fixed; /*khi để fixed thì width:auto(co nhỏ lại) nên cần phải chỉnh width */
+  width: 100%; /*canh ra được full width theo viewport*/
+  top: 30px; /*This property sets the distance from the top of the viewport to the top edge of the header.*/
+  z-index: 999;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
 
-    z-index: 999;
+.header .inner_wrap {
+  background-color: rgb(210, 208, 208);
+  padding: 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 45px;
+}
 
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+.header .inner_logo img {
+  width: auto;
+  height: 30px;
 }
-.header .inner_wrap{
-    background-color: rgb(210, 208, 208);
-    padding: 25px 40px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header .inner_menu ul { /*vì  tag ul có sẵn padding và margin nên css nó về 0 trước*/
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
 
-    border-radius: 45px;
+.header .inner_menu ul li {
+  margin-left: 30px;
 }
-.header .inner_logo img{
-    width: auto;
-    height: 30px;
-}
-.header .inner_menu ul{/*vì  tag ul có sẵn padding và margin nên css nó về 0 trước*/
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
 
-    display: flex;
+.header .inner_menu ul li a {
+  color: var(--color-text-1);
+  font-weight: 500;
+  font-size: 14px;
 }
-.header .inner_menu ul li{
-    margin-left: 30px;
+
+.header .inner_menu ul li a:hover {
+  color: var(--color-highlight);
 }
-.header .inner_menu ul li a{
-    color: var(--color-text-1);
-    font-weight: 500;
-    font-size: 14px;
+
+.header .inner_icon_menu {
+  display: none;
 }
-.header .inner_menu ul li a:hover{
-    color: var(--color-highlight)
-}
-.header .inner_icon_menu{
+
+@media (max-width: 991.98px) {
+  .header .inner_menu {
     display: none;
-}
-@media (max-width:991.98px){
-    .header .inner_menu{
-        display: none;
-    }
-    .header .inner_icon_menu{
-        display: inline-block;
-        font-size: 24px;
-    }
+  }
+  .header .inner_icon_menu {
+    display: inline-block;
+    font-size: 24px;
+  }
 }
 /* Box header */
-
-
-
-
-
 /* Section 1 */
-.section_1{
-    background-image: url(../img/banner-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;/*cover: ensures that the background image covers the entire container while maintaining its aspect ratio.*/
-    background-position: center center;/*meaning the image will be centered both horizontally and vertically*/
-    height: 100vh; /* Chiều cao của container sẽ bằng chiều cao của cửa sổ trình duyệt(viewport height): cái ảnh nền full */
+.section_1 {
+  background-image: url(../img/banner-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover; /*cover: ensures that the background image covers the entire container while maintaining its aspect ratio.*/
+  background-position: center center; /*meaning the image will be centered both horizontally and vertically*/
+  height: 100vh; /* Chiều cao của container sẽ bằng chiều cao của cửa sổ trình duyệt(viewport height): cái ảnh nền full */
+  display: flex; /*2 dòng này căn giữa content section 1(lạ hé)*/
+  align-items: center;
+}
 
-    display: flex;/*2 dòng này căn giữa content section 1(lạ hé)*/
-    align-items: center;
+.section_1 .inner_main {
+  max-width: 600px;
+  margin: 0 auto; /*canh giữa so với box cha là box container*/
+  text-align: center;
 }
-.section_1 .inner_main{
-    max-width: 600px;
-    margin: 0 auto;/*canh giữa so với box cha là box container*/
-    text-align: center;
+
+.section_1 .inner_main .inner_title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
-.section_1 .inner_main .inner_title{
-    color: #fff;
-    font-size: 36px;
-    font-weight: 500;
-    margin-bottom: 30px;
+
+.section_1 .inner_main .inner_desc {
+  color: #fff;
+  margin-bottom: 30px;
 }
-.section_1 .inner_main .inner_desc{
-    color: #fff;
-    margin-bottom: 30px;
-}
-@media (max-width:767.98px){
-    .section_1 .inner_main .inner_title{
-        font-size: 24px;
-    }
+
+@media (max-width: 767.98px) {
+  .section_1 .inner_main .inner_title {
+    font-size: 24px;
+  }
 }
 /* End Section 1 */
-
-
-
 /* Section 2 */
-.section_2{
-    margin-top: -200px;/*thò lên trên*/
+.section_2 {
+  margin-top: -200px; /*thò lên trên*/
 }
-.section_2 .inner_box{
-    background-color:  #fff;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
-    border-radius: 15px; 
-    margin-bottom: 30px;
-}
-.section_2 .inner_box .inner_icon{
-    background-color: var(--color-main);
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
 
-    margin: 0 auto 30px auto;
+.section_2 .inner_box {
+  background-color: #fff;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
 
-    display: inline-flex;/*img canh giữa inner_icon*/
-    align-items: center;
-    justify-content: center;
+.section_2 .inner_box .inner_icon {
+  background-color: var(--color-main);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 30px auto;
+  display: inline-flex; /*img canh giữa inner_icon*/
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.4s;
+}
 
-    padding: 20px;
+.section_2 .inner_box:hover .inner_icon {
+  background-color: var(--color-highlight);
+}
 
-    transition: all 0.4s;
+.section_2 .inner_box .inner_icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /*lun lun vừa khung*/
 }
-.section_2 .inner_box:hover .inner_icon{
-    background-color: var(--color-highlight);
+
+.section_2 .inner_box .inner_title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text-1);
+  margin-bottom: 15px;
 }
-.section_2 .inner_box .inner_icon img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;/*lun lun vừa khung*/
+
+.section_2 .inner_box .inner_desc {
+  font-size: 13px;
+  color: var(--color-text-2);
 }
-.section_2 .inner_box .inner_title{
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--color-text-1);
-    margin-bottom: 15px;
-}
-.section_2 .inner_box .inner_desc{
-    font-size: 13px;
-    color: var(--color-text-2);
-}
-@media (max-width:991.98px){
-    .section_2{
-        margin-top: 0;
-    }
+
+@media (max-width: 991.98px) {
+  .section_2 {
+    margin-top: 0;
+  }
 }
 /* End Section 2 */
-
-
-
-
 /* Section 3 */
-.section_3{
-    padding: 80px 0;
+.section_3 {
+  padding: 80px 0;
 }
-.section_3 .inner_image{
-    padding: 0 15%;/*tự co giãn content để padding, box cha sẽ kg thay đổi mà content thay đổi*/
+
+.section_3 .inner_image {
+  padding: 0 15%; /*tự co giãn content để padding, box cha sẽ kg thay đổi mà content thay đổi*/
 }
-.section_3 .inner_image img{
-    max-width: 100%;
-    height: auto;
+
+.section_3 .inner_image img {
+  max-width: 100%;
+  height: auto;
 }
-.section_3 .inner_image.inner_image_right{
-    text-align: right;
+
+.section_3 .inner_image.inner_image_right {
+  text-align: right;
 }
-.section_3 .inner_content .inner_title{
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--color-text-1);
-    margin-bottom: 30px;
+
+.section_3 .inner_content .inner_title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-text-1);
+  margin-bottom: 30px;
 }
-.section_3.inner_content .inner_desc{
-    color: var(--color-text-2);
+
+.section_3.inner_content .inner_desc {
+  color: var(--color-text-2);
 }
-@media (max-width:991.98px){
-    .section_3 .inner_image{
-        margin: 15px 0;
-        padding: 0;
-        text-align: center;
-    }
-    .section_3 .inner_image.inner_image_right{
-        text-align: center;
-    }
-    .section_3 .inner_content{
-        margin: 15px 0;
-        text-align: center;
-    }
+
+@media (max-width: 991.98px) {
+  .section_3 .inner_image {
+    margin: 15px 0;
+    padding: 0;
+    text-align: center;
+  }
+  .section_3 .inner_image.inner_image_right {
+    text-align: center;
+  }
+  .section_3 .inner_content {
+    margin: 15px 0;
+    text-align: center;
+  }
 }
 /* End Section 3 */
-
-
-
-
-
 /* Section 4 */
-.section_4{
-    background-image: url(../img/work-process-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    padding: 100px 0;/*tự co giãn content(chỉ có width), còn height giữ nguyên + thêm 100px*/
+.section_4 {
+  background-image: url(../img/work-process-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0; /*tự co giãn content(chỉ có width), còn height giữ nguyên + thêm 100px*/
 }
-.section_4 .inner_box{
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
 
-    position: relative;/*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
-
-    margin-bottom: 30px;
+.section_4 .inner_box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative; /*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
+  margin-bottom: 30px;
 }
-.section_4 .inner_box::before{/*dổ bóng to to sau*/
-    content: "";
-    display: block;
-    width: 100%;/*so sánh box cha(.inner_box)*/
-    height: 100%;/*so sánh box cha(.inner_box)*/
-    background-color: #ffffff42;/*chỉnh thành #fff trước, sau đó  kéo thanh 2(opcacity) xuống*/
-    border-radius: 15px;
 
-    position: absolute;/*so sánh box cha(.inner_box)*/
-    top: 10px;
-    left: 10px;
+.section_4 .inner_box::before { /*dổ bóng to to sau*/
+  content: "";
+  display: block;
+  width: 100%; /*so sánh box cha(.inner_box)*/
+  height: 100%; /*so sánh box cha(.inner_box)*/
+  background-color: rgba(255, 255, 255, 0.2588235294); /*chỉnh thành #fff trước, sau đó  kéo thanh 2(opcacity) xuống*/
+  border-radius: 15px;
+  position: absolute; /*so sánh box cha(.inner_box)*/
+  top: 10px;
+  left: 10px;
 }
-.section_4 .inner_box img{
-    height: 32px;
-    width: auto;
-    margin-bottom: 20px;
 
-    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+.section_4 .inner_box img {
+  height: 32px;
+  width: auto;
+  margin-bottom: 20px;
+  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
 }
-.section_4 .inner_box .inner_title{
-    font-size: 18px;
-    color: var(--color-text-1);
 
-    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+.section_4 .inner_box .inner_title {
+  font-size: 18px;
+  color: var(--color-text-1);
+  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
 }
-.section_4 .inner_box .inner_desc{
-    font-size: 14px;
-    color: var(--color-text-2);
-    margin-top: 5px;
 
-    position: relative;/*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+.section_4 .inner_box .inner_desc {
+  font-size: 14px;
+  color: var(--color-text-2);
+  margin-top: 5px;
+  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
 }
+
 /* End Section 4 */
-
-
-
 /* Section 5 */
-.section_5{
-    padding: 80px 0;
+.section_5 {
+  padding: 80px 0;
 }
-.section_5 .inner_box{
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-.section_5 .inner_box .inner_icon{
-    text-align: center;
-    margin-bottom: 30px;
-}
-.section_5 .inner_box .inner_icon img{
-    height: 32px;
-    width: auto;
-}
-.section_5 .inner_box .inner_desc{
-    color: var(--color-text-2);
-    margin-bottom: 30px;
-}
-.section_5 .inner_box .inner_infor{
-    display: flex;
-    align-items: center;
-}
-.section_5 .inner_box .inner_infor .inner_avatar{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
 
-    overflow: hidden;/*ảnh trong khung dù tràn bị che đi->che thành hình tròn, kg che thì vuông do tràn*/
-    
-    margin-right: 15px;
+.section_5 .inner_box {
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
 }
-.section_5 .inner_box .inner_infor .inner_avatar img{
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;/*ảnh vừa box .inner_avatar*/
+.section_5 .inner_box .inner_icon {
+  text-align: center;
+  margin-bottom: 30px;
 }
-.section_5 .inner_box .inner_infor .inner_text{
-    flex: 1;/*chiếm phần còn lại vì trong inner_infor có 2 thành phần: text và avatar*/
+
+.section_5 .inner_box .inner_icon img {
+  height: 32px;
+  width: auto;
 }
-.section_5 .inner_box .inner_infor .inner_text .inner_name{
-    font-size: 18px;
-    color: var(--color-text-1);
+
+.section_5 .inner_box .inner_desc {
+  color: var(--color-text-2);
+  margin-bottom: 30px;
 }
-.section_5 .inner_box .inner_infor .inner_text .inner_position{
-    font-size: 14px;
-    color: var(--color-highlight);
+
+.section_5 .inner_box .inner_infor {
+  display: flex;
+  align-items: center;
 }
+
+.section_5 .inner_box .inner_infor .inner_avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden; /*ảnh trong khung dù tràn bị che đi->che thành hình tròn, kg che thì vuông do tràn*/
+  margin-right: 15px;
+}
+
+.section_5 .inner_box .inner_infor .inner_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*ảnh vừa box .inner_avatar*/
+}
+
+.section_5 .inner_box .inner_infor .inner_text {
+  flex: 1; /*chiếm phần còn lại vì trong inner_infor có 2 thành phần: text và avatar*/
+}
+
+.section_5 .inner_box .inner_infor .inner_text .inner_name {
+  font-size: 18px;
+  color: var(--color-text-1);
+}
+
+.section_5 .inner_box .inner_infor .inner_text .inner_position {
+  font-size: 14px;
+  color: var(--color-highlight);
+}
+
 /* End Section 5 */
-
-
 /* Section 6 */
-.section_6{
-    background-color: var(--bg-1);
-    padding: 80px 0;
+.section_6 {
+  background-color: var(--bg-1);
+  padding: 80px 0;
 }
-.section_6 .inner_box{
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+
+.section_6 .inner_box {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
-.section_6 .inner_box .inner_title{
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 20px;
+
+.section_6 .inner_box .inner_title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
-.section_6 .inner_box .inner_price{
-    background-color: var(--color-main);
-    padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    color: #fff;
-    
+
+.section_6 .inner_box .inner_price {
+  background-color: var(--color-main);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  color: #fff;
 }
-.section_6 .inner_box.inner_highlight .inner_price{
-    background-color: var(--color-highlight);
+
+.section_6 .inner_box.inner_highlight .inner_price {
+  background-color: var(--color-highlight);
 }
-.section_6 .inner_box .inner_price div:nth-child(1){/*trong inner_price có 2 tag div chọn tag div đâu tiên*/
-    font-size: 28px;
-    font-weight: 500;
+
+.section_6 .inner_box .inner_price div:nth-child(1) { /*trong inner_price có 2 tag div chọn tag div đâu tiên*/
+  font-size: 28px;
+  font-weight: 500;
 }
-.section_6 .inner_box .inner_list{
-    list-style: none;
-    padding: 0;
-    margin: 0 0 30px 0;
+
+.section_6 .inner_box .inner_list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
 }
+
 /* End Section 6 */
-
-
-
 /* Section 7 */
-.section_7{
-    background-image: url(../img/fun-facts-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    padding: 120px 0;
+.section_7 {
+  background-image: url(../img/fun-facts-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
 }
+
 .section_7 .inner_box {
-    margin: 20px 0;
+  margin: 20px 0;
 }
-.section_7 .inner_box .inner_content{
-    color: #fff;
-    text-align: center;
 
-    position: relative;/*chèn icon phía sau, có phần tử giả before after gì gì đó*/
+.section_7 .inner_box .inner_content {
+  color: #fff;
+  text-align: center;
+  position: relative; /*chèn icon phía sau, có phần tử giả before after gì gì đó*/
 }
-.section_7 .inner_box .inner_content::after{/*có icon phía sau*/
-    content: "";
-    display: inline-block;
-    width: 60px;
-    height: 20px;
-    background-image: url(../img/circle-dec.png);
-    background-repeat: no-repeat;
 
-    position: absolute;
-    top: calc(50% - 20px/2);
-    left: calc(100% - 60px/2);
+.section_7 .inner_box .inner_content::after { /*có icon phía sau*/
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+  background-image: url(../img/circle-dec.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(100% - 30px);
 }
-.section_7 .col-xl-3:last-child .inner_box .inner_content::after{/*có box có icon cuối */
+
+.section_7 .col-xl-3:last-child .inner_box .inner_content::after { /*có box có icon cuối */
+  display: none;
+}
+
+.section_7 .inner_box .inner_content .inner_number {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section_7 .inner_box .inner_content .inner_label {
+  font-weight: 500;
+}
+
+@media (max-width: 991.98px) {
+  .section_7 .inner_box .inner_content::after {
     display: none;
-}
-.section_7 .inner_box .inner_content .inner_number{
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 15px;
-}
-.section_7 .inner_box .inner_content .inner_label{
-    font-weight: 500;
-}
-@media (max-width:991.98px){
-    .section_7 .inner_box .inner_content::after{
-        display: none;
-    }
+  }
 }
 /* End Section 7 */
-
-
-
-
 /* Section 9 */
-.section_9{
-    background-color: var(--bg-1);
-    padding: 150px 0;
+.section_9 {
+  background-color: var(--bg-1);
+  padding: 150px 0;
 }
-.section_9 .inner_content .inner_title{
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--color-text-1);
+
+.section_9 .inner_content .inner_title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-text-1);
 }
-.section_9 .inner_content .inner_desc{
-    font-size: 14px;
-    color: var(--color-text-2);
-    margin-top: 30px;
+
+.section_9 .inner_content .inner_desc {
+  font-size: 14px;
+  color: var(--color-text-2);
+  margin-top: 30px;
 }
-.section_9 .inner_form .form-group{
+
+.section_9 .inner_form .form-group {
+  margin-bottom: 30px;
+}
+
+.section_9 .inner_form input, .section_9 .inner_form textarea { /*nhóm lại nhiều tag cùng thuộc tính(3 thuộc tính dưới) thì dùng dấu ","*/
+  border-radius: 25px;
+  min-height: 50px; /*hình như này kg ăn css do bên html để rows="5"*/
+  border-color: #878686;
+}
+
+@media (max-width: 991.98px) {
+  .section_9 .inner_content {
     margin-bottom: 30px;
-}
-.section_9 .inner_form input, .section_9 .inner_form textarea{/*nhóm lại nhiều tag cùng thuộc tính(3 thuộc tính dưới) thì dùng dấu ","*/
-    border-radius: 25px;
-    min-height: 50px;/*hình như này kg ăn css do bên html để rows="5"*/
-    border-color: #878686;
-}
-@media (max-width:991.98px){
-    .section_9 .inner_content{
-        margin-bottom: 30px;
-    }
+  }
 }
 /* End Section 9 */
+
+/*# sourceMappingURL=style.css.map */
