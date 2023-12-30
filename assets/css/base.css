@@ -1,11 +1,12 @@
 @charset "UTF-8";
-/* import embedded is always first : font text*/
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-/* *{
-    box-sizing: border-box;
-} */
 /*create variable global: colours*/
 /*End create variable global: colours*/
+/* import embedded is always first : font text*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
 /*init body font dùng variable global --font*/
 body {
   font-family: "Raleway", sans-serif;
@@ -28,24 +29,19 @@ a:hover {
   font-weight: 500;
   transition: all 0.4s;
 }
-
 .button:hover {
   color: #fff;
 }
-
-.button_highlight {
+.button--highlight {
   background-color: #ff589e;
 }
-
-.button_highlight:hover {
+.button--highlight:hover {
   background-color: #8261ee;
 }
-
-.button_main {
+.button--main {
   background-color: #8261ee;
 }
-
-.button_main:hover {
+.button--main:hover {
   background-color: #ff589e;
 }
 
@@ -55,24 +51,19 @@ a:hover {
   margin-bottom: 40px;
   text-align: center;
 }
-
-.box_head .inner_title {
+.box_head__title {
   color: #1e1e1e;
   font-size: 28px;
   font-weight: 500;
 }
-
-.box_head .inner_desc {
+.box_head__desc {
   color: #777;
   margin-top: 10px;
 }
-
-/*box white*/
-.box_head.inner_white .inner_title {
+.box_head--white .box_head__title {
   color: #fff;
 }
-
-.box_head.inner_white .inner_desc {
+.box_head--white .box_head__desc {
   color: #fff;
 }
 

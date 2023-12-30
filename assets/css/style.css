@@ -1,14 +1,19 @@
 @charset "UTF-8";
+/*create variable global: colours*/
+/*End create variable global: colours*/
 /* Box header */
-.header { /*luôn luôn cố định 1 chỗ*/
-  position: fixed; /*khi để fixed thì width:auto(co nhỏ lại) nên cần phải chỉnh width */
-  width: 100%; /*canh ra được full width theo viewport*/
-  top: 30px; /*This property sets the distance from the top of the viewport to the top edge of the header.*/
+.header {
+  /*luôn luôn cố định 1 chỗ*/
+  position: fixed;
+  /*khi để fixed thì width:auto(co nhỏ lại) nên cần phải chỉnh width */
+  width: 100%;
+  /*canh ra được full width theo viewport*/
+  top: 30px;
+  /*This property sets the distance from the top of the viewport to the top edge of the header.*/
   z-index: 999;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
-
-.header .inner_wrap {
+.header__wrap {
   background-color: rgb(210, 208, 208);
   padding: 25px 40px;
   display: flex;
@@ -16,88 +21,85 @@
   justify-content: space-between;
   border-radius: 45px;
 }
-
-.header .inner_logo img {
+.header__logo img {
   width: auto;
   height: 30px;
 }
-
-.header .inner_menu ul { /*vì  tag ul có sẵn padding và margin nên css nó về 0 trước*/
+.header__menu ul {
+  /*vì  tag ul có sẵn padding và margin nên css nó về 0 trước*/
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
-
-.header .inner_menu ul li {
+.header__menu li {
   margin-left: 30px;
 }
-
-.header .inner_menu ul li a {
-  color: var(--color-text-1);
+.header__menu a {
+  color: #1e1e1e;
   font-weight: 500;
   font-size: 14px;
 }
-
-.header .inner_menu ul li a:hover {
-  color: var(--color-highlight);
+.header__menu a:hover {
+  color: #ff589e;
 }
-
-.header .inner_icon_menu {
+.header__icon_menu {
   display: none;
 }
-
 @media (max-width: 991.98px) {
-  .header .inner_menu {
+  .header__menu {
     display: none;
   }
-  .header .inner_icon_menu {
+  .header__icon_menu {
     display: inline-block;
     font-size: 24px;
   }
 }
+
 /* Box header */
-/* Section 1 */
-.section_1 {
+/* Banner hero */
+.banner-hero {
   background-image: url(../img/banner-bg.png);
   background-repeat: no-repeat;
-  background-size: cover; /*cover: ensures that the background image covers the entire container while maintaining its aspect ratio.*/
-  background-position: center center; /*meaning the image will be centered both horizontally and vertically*/
-  height: 100vh; /* Chiều cao của container sẽ bằng chiều cao của cửa sổ trình duyệt(viewport height): cái ảnh nền full */
-  display: flex; /*2 dòng này căn giữa content section 1(lạ hé)*/
+  background-size: cover;
+  /*cover: ensures that the background image covers the entire container while maintaining its aspect ratio.*/
+  background-position: center center;
+  /*meaning the image will be centered both horizontally and vertically*/
+  height: 100vh;
+  /* Chiều cao của container sẽ bằng chiều cao của cửa sổ trình duyệt(viewport height): cái ảnh nền full */
+  display: flex;
+  /*2 dòng này căn giữa content section 1(lạ hé)*/
   align-items: center;
 }
-
-.section_1 .inner_main {
+.banner-hero__main {
   max-width: 600px;
-  margin: 0 auto; /*canh giữa so với box cha là box container*/
+  margin: 0 auto;
+  /*canh giữa so với box cha là box container*/
   text-align: center;
 }
-
-.section_1 .inner_main .inner_title {
+.banner-hero__title {
   color: #fff;
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 30px;
 }
-
-.section_1 .inner_main .inner_desc {
+.banner-hero__desc {
   color: #fff;
   margin-bottom: 30px;
 }
-
 @media (max-width: 767.98px) {
-  .section_1 .inner_main .inner_title {
+  .banner-hero__title {
     font-size: 24px;
   }
 }
-/* End Section 1 */
-/* Section 2 */
-.section_2 {
-  margin-top: -200px; /*thò lên trên*/
-}
 
-.section_2 .inner_box {
+/* End Banner hero */
+/* box highlight */
+.box-highlight {
+  margin-top: -200px;
+  /*thò lên trên*/
+}
+.box-highlight__box {
   background-color: #fff;
   padding: 40px;
   text-align: center;
@@ -105,210 +107,199 @@
   border-radius: 15px;
   margin-bottom: 30px;
 }
-
-.section_2 .inner_box .inner_icon {
-  background-color: var(--color-main);
+.box-highlight__icon {
+  background-color: #8261ee;
   width: 90px;
   height: 90px;
   border-radius: 50%;
   margin: 0 auto 30px auto;
-  display: inline-flex; /*img canh giữa inner_icon*/
+  display: inline-flex;
+  /*img canh giữa inner_icon*/
   align-items: center;
   justify-content: center;
   padding: 20px;
   transition: all 0.4s;
 }
-
-.section_2 .inner_box:hover .inner_icon {
-  background-color: var(--color-highlight);
-}
-
-.section_2 .inner_box .inner_icon img {
+.box-highlight__icon img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /*lun lun vừa khung*/
+  object-fit: contain;
+  /*lun lun vừa khung*/
 }
-
-.section_2 .inner_box .inner_title {
+.box-highlight__box:hover .box-highlight__icon {
+  background-color: #ff589e;
+}
+.box-highlight__title {
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-text-1);
+  color: #1e1e1e;
   margin-bottom: 15px;
 }
-
-.section_2 .inner_box .inner_desc {
+.box-highlight__desc {
   font-size: 13px;
-  color: var(--color-text-2);
+  color: #777;
 }
-
 @media (max-width: 991.98px) {
-  .section_2 {
+  .box-highlight { /*& đại diện selector parent*/
     margin-top: 0;
   }
 }
-/* End Section 2 */
+
+/* End box highlight*/
 /* Section 3 */
-.section_3 {
+.banner-text {
   padding: 80px 0;
 }
-
-.section_3 .inner_image {
-  padding: 0 15%; /*tự co giãn content để padding, box cha sẽ kg thay đổi mà content thay đổi*/
+.banner-text__image {
+  padding: 0 15%;
+  /*tự co giãn content để padding, box cha sẽ kg thay đổi mà content thay đổi*/
 }
-
-.section_3 .inner_image img {
+.banner-text__image img {
   max-width: 100%;
   height: auto;
 }
-
-.section_3 .inner_image.inner_image_right {
+.banner-text__image--right {
   text-align: right;
 }
-
-.section_3 .inner_content .inner_title {
+.banner-text__title {
   font-size: 24px;
   font-weight: 500;
-  color: var(--color-text-1);
+  color: #1e1e1e;
   margin-bottom: 30px;
 }
-
-.section_3.inner_content .inner_desc {
-  color: var(--color-text-2);
+.banner-text__desc {
+  color: #777;
 }
-
 @media (max-width: 991.98px) {
-  .section_3 .inner_image {
+  .banner-text__image {
     margin: 15px 0;
     padding: 0;
     text-align: center;
   }
-  .section_3 .inner_image.inner_image_right {
+  .banner-text__image--right {
     text-align: center;
   }
-  .section_3 .inner_content {
+  .banner-text__content {
     margin: 15px 0;
     text-align: center;
   }
 }
+
 /* End Section 3 */
 /* Section 4 */
-.section_4 {
+.work-process {
   background-image: url(../img/work-process-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 100px 0; /*tự co giãn content(chỉ có width), còn height giữ nguyên + thêm 100px*/
+  padding: 100px 0;
+  /*tự co giãn content(chỉ có width), còn height giữ nguyên + thêm 100px*/
 }
-
-.section_4 .inner_box {
+.work-process__box {
   background-color: #fff;
   padding: 20px;
   border-radius: 15px;
   text-align: center;
-  position: relative; /*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
+  position: relative;
+  /*dổ bóng to to sau, so sánh box cha cũng chính là relative*/
   margin-bottom: 30px;
 }
-
-.section_4 .inner_box::before { /*dổ bóng to to sau*/
+.work-process__box::before {
+  /*dổ bóng to to sau*/
   content: "";
   display: block;
-  width: 100%; /*so sánh box cha(.inner_box)*/
-  height: 100%; /*so sánh box cha(.inner_box)*/
-  background-color: rgba(255, 255, 255, 0.2588235294); /*chỉnh thành #fff trước, sau đó  kéo thanh 2(opcacity) xuống*/
+  width: 100%;
+  /*so sánh box cha(.inner_box)*/
+  height: 100%;
+  /*so sánh box cha(.inner_box)*/
+  background-color: rgba(255, 255, 255, 0.2588235294);
+  /*chỉnh thành #fff trước, sau đó  kéo thanh 2(opcacity) xuống*/
   border-radius: 15px;
-  position: absolute; /*so sánh box cha(.inner_box)*/
+  position: absolute;
+  /*so sánh box cha(.inner_box)*/
   top: 10px;
   left: 10px;
 }
-
-.section_4 .inner_box img {
+.work-process__box img {
   height: 32px;
   width: auto;
   margin-bottom: 20px;
-  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+  position: relative;
+  /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
 }
-
-.section_4 .inner_box .inner_title {
+.work-process__title {
   font-size: 18px;
-  color: var(--color-text-1);
-  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+  color: #1e1e1e;
+  position: relative;
 }
-
-.section_4 .inner_box .inner_desc {
+.work-process___desc {
   font-size: 14px;
-  color: var(--color-text-2);
+  color: #777;
   margin-top: 5px;
-  position: relative; /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
+  position: relative;
+  /*để ảnh,title,desc nằm lên trên, khi có phần tử giả*/
 }
 
 /* End Section 4 */
 /* Section 5 */
-.section_5 {
+.testimonial {
   padding: 80px 0;
 }
-
-.section_5 .inner_box {
+.testimonial__box {
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   padding: 30px;
   border-radius: 15px;
   margin-bottom: 30px;
 }
-
-.section_5 .inner_box .inner_icon {
+.testimonial__icon {
   text-align: center;
   margin-bottom: 30px;
 }
-
-.section_5 .inner_box .inner_icon img {
+.testimonial__icon img {
   height: 32px;
   width: auto;
 }
-
-.section_5 .inner_box .inner_desc {
-  color: var(--color-text-2);
+.testimonial__desc {
+  color: #777;
   margin-bottom: 30px;
 }
-
-.section_5 .inner_box .inner_infor {
+.testimonial__infor {
   display: flex;
   align-items: center;
 }
-
-.section_5 .inner_box .inner_infor .inner_avatar {
+.testimonial__avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  overflow: hidden; /*ảnh trong khung dù tràn bị che đi->che thành hình tròn, kg che thì vuông do tràn*/
+  overflow: hidden;
+  /*ảnh trong khung dù tràn bị che đi->che thành hình tròn, kg che thì vuông do tràn*/
   margin-right: 15px;
 }
-
-.section_5 .inner_box .inner_infor .inner_avatar img {
+.testimonial__avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /*ảnh vừa box .inner_avatar*/
+  object-fit: cover;
+  /*ảnh vừa box .inner_avatar*/
 }
-
-.section_5 .inner_box .inner_infor .inner_text {
-  flex: 1; /*chiếm phần còn lại vì trong inner_infor có 2 thành phần: text và avatar*/
+.testimonial__text {
+  flex: 1;
+  /*chiếm phần còn lại vì trong inner_infor có 2 thành phần: text và avatar*/
 }
-
-.section_5 .inner_box .inner_infor .inner_text .inner_name {
+.testimonial__name {
   font-size: 18px;
-  color: var(--color-text-1);
+  color: #1e1e1e;
 }
-
-.section_5 .inner_box .inner_infor .inner_text .inner_position {
+.testimonial__position {
   font-size: 14px;
-  color: var(--color-highlight);
+  color: #ff589e;
 }
 
 /* End Section 5 */
 /* Section 6 */
-.section_6 {
-  background-color: var(--bg-1);
+.pricing-plans {
+  background-color: #F2F2FE;
   padding: 80px 0;
 }
-
-.section_6 .inner_box {
+.pricing-plans__box {
   background-color: #fff;
   border-radius: 15px;
   padding: 30px;
@@ -316,31 +307,27 @@
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
-
-.section_6 .inner_box .inner_title {
+.pricing-plans__title {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
 }
-
-.section_6 .inner_box .inner_price {
-  background-color: var(--color-main);
+.pricing-plans__price {
+  background-color: #8261ee;
   padding: 15px;
   border-radius: 15px;
   margin-bottom: 30px;
   color: #fff;
 }
-
-.section_6 .inner_box.inner_highlight .inner_price {
-  background-color: var(--color-highlight);
-}
-
-.section_6 .inner_box .inner_price div:nth-child(1) { /*trong inner_price có 2 tag div chọn tag div đâu tiên*/
+.pricing-plans__price div:nth-child(1) {
+  /*trong inner_price có 2 tag div chọn tag div đâu tiên*/
   font-size: 28px;
   font-weight: 500;
 }
-
-.section_6 .inner_box .inner_list {
+.pricing-plans--highlight .pricing-plans__price {
+  background-color: #ff589e;
+}
+.pricing-plans__list {
   list-style: none;
   padding: 0;
   margin: 0 0 30px 0;
@@ -348,25 +335,24 @@
 
 /* End Section 6 */
 /* Section 7 */
-.section_7 {
+.box-counter {
   background-image: url(../img/fun-facts-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 120px 0;
 }
-
-.section_7 .inner_box {
+.box-counter__box {
   margin: 20px 0;
 }
-
-.section_7 .inner_box .inner_content {
+.box-counter__content {
   color: #fff;
   text-align: center;
-  position: relative; /*chèn icon phía sau, có phần tử giả before after gì gì đó*/
+  position: relative;
+  /*chèn icon phía sau, có phần tử giả before after gì gì đó*/
 }
-
-.section_7 .inner_box .inner_content::after { /*có icon phía sau*/
+.box-counter__content::after {
+  /*có icon phía sau*/
   content: "";
   display: inline-block;
   width: 60px;
@@ -377,60 +363,57 @@
   top: calc(50% - 10px);
   left: calc(100% - 30px);
 }
-
-.section_7 .col-xl-3:last-child .inner_box .inner_content::after { /*có box có icon cuối */
+.col-xl-3:last-child .box-counter__content::after {
+  /*có box có icon cuối */
   display: none;
 }
-
-.section_7 .inner_box .inner_content .inner_number {
+.box-counter__number {
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 15px;
 }
-
-.section_7 .inner_box .inner_content .inner_label {
+.box-counter__label {
   font-weight: 500;
 }
-
 @media (max-width: 991.98px) {
-  .section_7 .inner_box .inner_content::after {
+  .box-counter__content::after {
     display: none;
   }
 }
+
 /* End Section 7 */
 /* Section 9 */
-.section_9 {
-  background-color: var(--bg-1);
+.talk-to-us {
+  background-color: #F2F2FE;
   padding: 150px 0;
 }
-
-.section_9 .inner_content .inner_title {
+.talk-to-us__title {
   font-size: 18px;
   font-weight: 500;
-  color: var(--color-text-1);
+  color: #1e1e1e;
 }
-
-.section_9 .inner_content .inner_desc {
+.talk-to-us__desc {
   font-size: 14px;
-  color: var(--color-text-2);
+  color: #777;
   margin-top: 30px;
 }
-
-.section_9 .inner_form .form-group {
+.talk-to-us__form .form-group {
   margin-bottom: 30px;
 }
-
-.section_9 .inner_form input, .section_9 .inner_form textarea { /*nhóm lại nhiều tag cùng thuộc tính(3 thuộc tính dưới) thì dùng dấu ","*/
+.talk-to-us__form input, .talk-to-us__form textarea {
+  /*nhóm lại nhiều tag cùng thuộc tính(3 thuộc tính dưới) thì dùng dấu ","*/
   border-radius: 25px;
-  min-height: 50px; /*hình như này kg ăn css do bên html để rows="5"*/
+  min-height: 50px;
+  /*hình như này kg ăn css do bên html để rows="5"*/
   border-color: #878686;
 }
-
 @media (max-width: 991.98px) {
-  .section_9 .inner_content {
+  .talk-to-us__content {
     margin-bottom: 30px;
   }
 }
+
 /* End Section 9 */
+/**/
 
 /*# sourceMappingURL=style.css.map */
